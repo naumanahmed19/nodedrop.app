@@ -126,7 +126,7 @@ export const Navbar = () => {
             </Button>
           </Link>
           <a
-            href="https://github.com/shadcnblocks/mainline-nextjs-template"
+            href="https://github.com/naumanahmed19/node-drop"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="size-4" />

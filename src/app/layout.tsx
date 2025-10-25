@@ -63,7 +63,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mainline - Modern Next.js Template",
+    default: "NodeDrop Workflow automation",
     template: "%s | Mainline",
   },
   description:
