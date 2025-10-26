@@ -87,15 +87,15 @@ export const Testimonials = ({
         <div className="container">
           <div className="space-y-4">
             <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-              Trusted by product builders
+              Trusted by developers worldwide
             </h2>
             <p className="text-muted-foreground max-w-md leading-snug">
-              Mainline is built on the habits that make the best product teams
-              successful: staying focused, moving quickly, and always aiming for
-              high-quality work.
+              NodeDrop is built on modern React and ReactFlow, giving developers
+              the flexibility to create powerful workflow editors with minimal
+              setup and maximum customization.
             </p>
             <Button variant="outline" className="shadow-md">
-              Read our Customer Stories <ArrowRight className="size-4" />
+              View on GitHub <ArrowRight className="size-4" />
             </Button>
           </div>
 

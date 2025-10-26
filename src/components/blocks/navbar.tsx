@@ -20,29 +20,15 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
-const ITEMS = [
-  {
-    label: "Features",
-    href: "#features",
-    dropdownItems: [
-      {
-        title: "Modern product teams",
-        href: "/#feature-modern-teams",
-        description:
-          "Mainline is built on the habits that make the best product teams successful",
-      },
-      {
-        title: "Resource Allocation",
-        href: "/#resource-allocation",
-        description: "Mainline your resource allocation and execution",
-      },
-    ],
-  },
-  { label: "About Us", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
-];
+const ITEMS: Array<{
+  label: string;
+  href: string;
+  dropdownItems?: Array<{
+    title: string;
+    href: string;
+    description: string;
+  }>;
+}> = [];
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,9 +45,9 @@ export const Navbar = () => {
       <div className="flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="logo"
-            width={94}
+            width={65}
             height={18}
             className="dark:invert"
           />
@@ -119,19 +105,20 @@ export const Navbar = () => {
 
         {/* Auth Buttons */}
         <div className="flex items-center gap-2.5">
-          <ThemeToggle />
-          <Link href="/login" className="max-lg:hidden">
-            <Button variant="outline">
-              <span className="relative z-10">Login</span>
+          {/* <ThemeToggle /> */}
+          <Link href="/https://github.com/naumanahmed19/node-drop" className="max-lg:hidden">
+            <Button variant="outline" className="rounded-full">
+              <Github className="size-4" />
+              <span className="relative z-10">GitHub</span>
             </Button>
           </Link>
-          <a
+          {/* <a
             href="https://github.com/naumanahmed19/node-drop"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="size-4" />
             <span className="sr-only">GitHub</span>
-          </a>
+          </a> */}
 
           {/* Hamburger Menu Button (Mobile Only) */}
           <button

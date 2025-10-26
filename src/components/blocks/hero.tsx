@@ -41,11 +41,11 @@ export const Hero = () => {
         {/* Left side - Main content */}
         <div className="flex-1">
           <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
-            NodeDrop Workflows
+            Workflow Editor
           </h1>
 
           <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            NodeDrop is an open source workflows editor, buit on top of ReactFlow
+            NodeDrop is an open source workflow editor, build on top of ReactFlow
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
@@ -60,7 +60,7 @@ export const Hero = () => {
               asChild
             >
               <a
-                href="https://shadcnblocks.com"
+                href="https://demo.nodedrop.app/"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
                 View Demo

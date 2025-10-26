@@ -23,9 +23,9 @@ const Signup = () => {
                   height={18}
                   className="mb-7 dark:invert"
                 />
-                <p className="mb-2 text-2xl font-bold">Start your free trial</p>
+                <p className="mb-2 text-2xl font-bold">Join the community</p>
                 <p className="text-muted-foreground">
-                  Sign up in less than 2 minutes.
+                  Create your account to get started.
                 </p>
               </CardHeader>
               <CardContent>
