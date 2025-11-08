@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: nodedrop-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nodedrop
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nodedrop123}
+      POSTGRES_DB: nodedrop
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nodedrop"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - nodedrop-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nodedrop-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://nodedrop:${POSTGRES_PASSWORD:-nodedrop123}@postgres:5432/nodedrop
+      NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+      NODE_ENV: production
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - nodedrop-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  nodedrop-network:
+    driver: bridge

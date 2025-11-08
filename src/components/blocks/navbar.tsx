@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 
 import { ChevronRight, Github } from "lucide-react";
 
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -28,7 +27,12 @@ const ITEMS: Array<{
     href: string;
     description: string;
   }>;
-}> = [];
+}> = [
+    {
+      label: "Marketplace",
+      href: "/marketplace",
+    },
+  ];
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
