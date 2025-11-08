@@ -11,6 +11,10 @@ RUN npm ci
 
 # Rebuild the source code only when needed
 FROM base AS builder
+
+# Install openssl for Prisma
+RUN apk add --no-cache openssl libc6-compat
+
 WORKDIR /app
 
 # Accept build arguments
@@ -26,10 +30,15 @@ ENV NEXTAUTH_SECRET=$NEXTAUTH_SECRET
 ENV NODE_ENV=$NODE_ENV
 
 COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+
+# Copy prisma schema first
+COPY prisma ./prisma
 
 # Generate Prisma Client
 RUN npx prisma generate
+
+# Copy rest of application
+COPY . .
 
 RUN npm run build
 
