@@ -16,8 +16,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    networks:
-      - nodedrop-network
 
   app:
     build:
@@ -35,13 +33,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    networks:
-      - nodedrop-network
 
 volumes:
   postgres_data:
     driver: local
-
-networks:
-  nodedrop-network:
-    driver: bridge
