@@ -1,5 +1,6 @@
-import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
+
+import bcrypt from "bcryptjs";
 
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
@@ -62,6 +63,7 @@ export async function PUT(request: Request) {
 
         return NextResponse.json({ message: "Email updated successfully" });
     } catch (error) {
+        // eslint-disable-next-line no-console
         console.error("Email update error:", error);
         return NextResponse.json(
             { error: "Internal server error" },
