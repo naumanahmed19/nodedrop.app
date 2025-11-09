@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { LogOut, Package } from "lucide-react";
+import { LogOut, Package, Settings } from "lucide-react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -72,6 +72,12 @@ export function AdminHeader({ user, onSignOut }: AdminHeaderProps) {
                             </div>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
+                        <DropdownMenuItem asChild>
+                            <Link href="/admin/settings">
+                                <Settings className="mr-2 size-4" />
+                                Settings
+                            </Link>
+                        </DropdownMenuItem>
                         <DropdownMenuItem onClick={onSignOut}>
                             <LogOut className="mr-2 size-4" />
                             Sign Out

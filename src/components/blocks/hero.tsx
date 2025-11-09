@@ -2,10 +2,10 @@ import Image from "next/image";
 
 import {
   ArrowRight,
-  Blend,
-  ChartNoAxesColumn,
-  CircleDot,
-  Diamond,
+  Workflow,
+  Zap,
+  Blocks,
+  Activity,
 } from "lucide-react";
 
 import { DashedLine } from "@/components/dashed-line";
@@ -13,24 +13,24 @@ import { Button } from "@/components/ui/button";
 
 const features = [
   {
-    title: "Tailored workflows",
-    description: "Track progress across custom issue flows for your team.",
-    icon: CircleDot,
+    title: "Visual Workflow Builder",
+    description: "Drag-and-drop node-based interface with real-time visualization.",
+    icon: Workflow,
   },
   {
-    title: "Cross-team projects",
-    description: "Collaborate across teams and departments.",
-    icon: Blend,
+    title: "20+ Built-in Nodes",
+    description: "Triggers, logic, actions, AI integrations, and data manipulation.",
+    icon: Blocks,
   },
   {
-    title: "Milestones",
-    description: "Break projects down into concrete phases.",
-    icon: Diamond,
+    title: "Real-time Execution",
+    description: "Monitor workflows live with WebSocket updates and detailed logs.",
+    icon: Activity,
   },
   {
-    title: "Progress insights",
-    description: "Track scope, velocity, and progress over time.",
-    icon: ChartNoAxesColumn,
+    title: "Custom Nodes & Extensibility",
+    description: "Upload custom nodes, build your own integrations, and extend functionality.",
+    icon: Zap,
   },
 ];
 
@@ -41,11 +41,11 @@ export const Hero = () => {
         {/* Left side - Main content */}
         <div className="flex-1">
           <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
-            Workflow Editor
+            Workflow Automation Platform
           </h1>
 
           <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            NodeDrop is an open source workflow editor, build on top of ReactFlow
+            Open source workflow automation with visual node-based editor, AI integrations, and real-time execution
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">

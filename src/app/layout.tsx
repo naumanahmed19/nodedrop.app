@@ -62,29 +62,30 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "NodeDrop Workflow automation",
-    template: "%s | Mainline",
+    default: "NodeDrop - Workflow Automation Platform",
+    template: "%s | NodeDrop",
   },
   description:
-    "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+    "Open source workflow automation platform with visual node-based editor, 20+ built-in nodes, AI integrations, real-time execution monitoring, and custom node support.",
   keywords: [
-    "Next.js",
-    "nextjs template",
-    "nextjs theme",
-    "nextjs starter",
-    "shadcn template",
-    "shadcn theme",
-    "shadcn starter",
-    "tailwind template",
-    "tailwind theme",
-    "tailwind starter",
-    "mdx template",
-    "mdx theme",
-    "mdx starter",
+    "workflow automation",
+    "node-based editor",
+    "visual workflow",
+    "automation platform",
+    "n8n alternative",
+    "zapier alternative",
+    "workflow builder",
+    "AI integration",
+    "OpenAI",
+    "Claude AI",
+    "webhook automation",
+    "cron scheduler",
+    "React Flow",
+    "open source automation",
   ],
-  authors: [{ name: "shadcnblocks.com" }],
-  creator: "shadcnblocks.com",
-  publisher: "shadcnblocks.com",
+  authors: [{ name: "NodeDrop" }],
+  creator: "NodeDrop",
+  publisher: "NodeDrop",
   robots: {
     index: true,
     follow: true,
@@ -101,26 +102,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "Mainline - Modern Next.js Template",
+    title: "NodeDrop - Workflow Automation Platform",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
-    siteName: "Mainline",
+      "Open source workflow automation with visual node-based editor, AI integrations, and real-time execution monitoring.",
+    siteName: "NodeDrop",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mainline - Modern Next.js Template",
+        alt: "NodeDrop - Workflow Automation Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mainline - Modern Next.js Template",
+    title: "NodeDrop - Workflow Automation Platform",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+      "Open source workflow automation with visual node-based editor, AI integrations, and real-time execution monitoring.",
     images: ["/og-image.jpg"],
-    creator: "@ausrobdev",
+    creator: "@nodedrop",
   },
 };
 

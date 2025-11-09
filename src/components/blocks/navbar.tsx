@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ChevronRight, Github } from "lucide-react";
+import { ChevronRight, Github, Store } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -42,11 +42,11 @@ export const Navbar = () => {
   return (
     <section
       className={cn(
-        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,700px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
-        "top-5 lg:top-12",
+        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,1000px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
+        "top-3 lg:top-8",
       )}
     >
-      <div className="flex items-center justify-between px-6 py-3">
+      <div className="flex items-center justify-between px-6 py-3 pb-5">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <Image
             src="/logo.png"
@@ -58,59 +58,59 @@ export const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList>
-            {ITEMS.map((link) =>
-              link.dropdownItems ? (
-                <NavigationMenuItem key={link.label} className="">
-                  <NavigationMenuTrigger className="data-[state=open]:bg-accent/50 bg-transparent! px-1.5">
-                    {link.label}
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="w-[400px] space-y-2 p-4">
-                      {link.dropdownItems.map((item) => (
-                        <li key={item.title}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              href={item.href}
-                              className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex items-center gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none"
-                            >
-                              <div className="space-y-1.5 transition-transform duration-300 group-hover:translate-x-1">
-                                <div className="text-sm leading-none font-medium">
-                                  {item.title}
-                                </div>
-                                <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              ) : (
-                <NavigationMenuItem key={link.label} className="">
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
-                      pathname === link.href && "text-muted-foreground",
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                </NavigationMenuItem>
-              ),
-            )}
-          </NavigationMenuList>
-        </NavigationMenu>
-
-        {/* Auth Buttons */}
         <div className="flex items-center gap-2.5">
+          <NavigationMenu className="max-lg:hidden">
+            <NavigationMenuList>
+              {ITEMS.map((link) =>
+                link.dropdownItems ? (
+                  <NavigationMenuItem key={link.label} className="">
+                    <NavigationMenuTrigger className="data-[state=open]:bg-accent/50 bg-transparent! px-1.5">
+                      {link.label}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="w-[400px] space-y-2 p-4">
+                        {link.dropdownItems.map((item) => (
+                          <li key={item.title}>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                href={item.href}
+                                className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex items-center gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none"
+                              >
+                                <div className="space-y-1.5 transition-transform duration-300 group-hover:translate-x-1">
+                                  <div className="text-sm leading-none font-medium">
+                                    {item.title}
+                                  </div>
+                                  <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ) : (
+                  <NavigationMenuItem key={link.label} className="">
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75 flex items-center gap-1.5",
+                        pathname === link.href && "text-muted-foreground",
+                      )}
+                    >
+                      <Store className="size-4" />
+                      {link.label}
+                    </Link>
+                  </NavigationMenuItem>
+                ),
+              )}
+            </NavigationMenuList>
+          </NavigationMenu>
+
           {/* <ThemeToggle /> */}
-          <Link href="/https://github.com/naumanahmed19/node-drop" className="max-lg:hidden">
+          <Link href="https://github.com/naumanahmed19/node-drop" className="max-lg:hidden">
             <Button variant="outline" className="rounded-full">
               <Github className="size-4" />
               <span className="relative z-10">GitHub</span>

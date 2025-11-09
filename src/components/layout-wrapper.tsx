@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 
+import { Background } from "@/components/background";
 import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
 
@@ -13,7 +14,11 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
         <>
             {!isAdminRoute && <Navbar />}
             <main className={isAdminRoute ? "" : ""}>{children}</main>
-            {!isAdminRoute && <Footer />}
+            {!isAdminRoute && (
+                <Background variant="bottom">
+                    <Footer />
+                </Background>
+            )}
         </>
     );
 }
